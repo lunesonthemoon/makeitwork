@@ -3,7 +3,7 @@ import serverless from 'serverless-http'
 import { connectToDatabase } from '../database/connect.js'
 
 // Choose an existing collection and a string field to use for searching.
-const collectionName = 'airbnb'
+const collectionName = 'listingsAndReviews'
 
 export const app = express()
 const router = express.Router()
@@ -32,7 +32,7 @@ router.get('/search', async (req, res) => {
     const items = await db.collection(collectionName)
         .find({ 
             // title: terms
-            title: RegExp(terms , 'i')   // JavaScript RegExp syntax is supported by MongoDB
+            beds: RegExp(terms , 'i')   // JavaScript RegExp syntax is supported by MongoDB
         }) 
         .limit(10)
         .toArray()
