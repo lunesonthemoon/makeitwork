@@ -30,9 +30,4 @@ const getData = async () => {
 }
 
 getData()
-﻿
 
- 
- 
- 
-just on another moon
